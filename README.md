@@ -1,43 +1,94 @@
-project/
-│
-├── config/
-│   ├── database.js         # Database configuration
-│   ├── middleware.js       # Middleware configuration
-│   └── passport.js         # Passport.js configuration for authentication
-│
-├── controllers/
-│   ├── authController.js   # Authentication controller
-│   ├── projectController.js # Project-related controller (submission, validation, etc.)
-│   └── userController.js   # User-related controller (registration, login, etc.)
-│
-├── models/
-│   ├── project.js          # Project model definition
-│   └── user.js             # User model definition
-│
-├── routes/
-│   ├── authRoutes.js       # Authentication routes (login, register, etc.)
-│   ├── projectRoutes.js    # Project-related routes (submission, validation, etc.)
-│   └── userRoutes.js       # User-related routes (registration, login, etc.)
-│
-├── services/
-│   ├── projectService.js   # Project-related business logic and services
-│   └── userService.js      # User-related business logic and services
-│
-├── tests/                  # Automated tests
-│   ├── project.test.js     # Tests for project-related functionality
-│   └── user.test.js        # Tests for user-related functionality
-│
-├── uploads/                # Directory to store uploaded project files
-│
-├── views/                  # Frontend views (if applicable)
-│   ├── auth/               # Authentication-related views
-│   ├── projects/           # Project-related views
-│   └── users/              # User-related views
-│
-├── .gitignore              # Specify files/folders to be ignored by git
-├── app.js                  # Entry point of the application
-├── package.json            # Project metadata and dependencies
-└── README.md               # Project documentation and instructions
+PROJECT NAME : MAKEMYBUSINESS
+=============================
+FRONTEND (REACT, REDUX TOOL KIT, BOOTSTRAP)
+SRC
+|---LAYOUTS
+|   |--FrontLayout.js
+|   |--AdminLayout.js
+|   |--SellerLayout.js
+|
+|---COMPONENTS
+|   |--AUTH
+|   |  |--Login.jsx
+|   |  |--Signup.jsx
+|   |  |--CreatePassword.jsx
+|   |  |--EmailVerification.jsx
+|   |--ADMIN
+|   |  |--USERS
+|   |  |  |--UserList.jsx
+|   |  |  |--UserCreate.jsx
+|   |  |  |--UserEdit.jsx
+|   |  |  |--UserRole.jsx
+|   |  |  
+|   |  |--DASHBOARD
+|   |  |  |--Analytics.jsx
+|   |  |  |--Charts.jsx
+|   |  |
+|   |  |--PROJECTS
+|   |  |
+|   |--SELLERS
+|   
+|
+|---PAGES
+|---API_DATA
+|---ASSETS
+|---REDUX
 
-
-
+BACKEND
+|---SRC
+|    |---CONTROLLERS
+|    |---MODELS
+|    |   |
+|    |   |--RoleModel.js  [ROLE MODE TO STORE ROLES FOR THE DIFFERENT TYPES OF USER'S PREVILIGESS]
+|    |   |  |--_id (INTEGER, STORE AS A FOREIGEN KEY IN THE USER MODEL)
+|    |   |  |--roleName (STRING)
+|    |   |  |--creaetdAt (TIMESTAMP)
+|    |   |  |--updatedAt (TIMESTAMP)
+|    |   |
+|    |   |--UserModel.js   [USER MODE TO STORE DATA OF THE USER FOR AUTHENTICATE]
+|    |   |  |--_id (INTEGER)
+|    |   |  |--firstName (STRING)
+|    |   |  |--lastName (STRING)
+|    |   |  |--images ([profileImage, profileCover])
+|    |   |  |--emailId (STRING)
+|    |   |  |--verificationStatus (BOOLEAN, DEFAULT 0)
+|    |   |  |--phoneNumber (STRING)
+|    |   |  |--roleId (INTEGER FOREIGEN KEY OF ROLE TABLE)
+|    |   |  |--createdAt (TIMESTAMP)
+|    |   |  |--updatedAt (TIMESTAMP)
+|    |   |   
+|    |   |--SessionModel.js
+|    |   |  |--_id (INTEGER)
+|    |   |  |--userId (INTEGER, FOREIGEN KEY OF USER)
+|    |   |  |--token (STRING)
+|    |   |  |--creaetdAt (TIMESTAMP)
+|    |   |  |--updatedAt (TIMESTAMP)
+|    |   |  
+|    |   |--ProjectCategoryModel.js
+|    |   |  |--_id (INTEGER)
+|    |   |  |--categoryName (STRING, REQUIRED)
+|    |   |  |--categoryDescription (LONG TEXT)
+|    |   |  |--categoryImage (STRING)
+|    |   |  |--categoryStatus (BOOLEAN, DEFAULT 0)
+|    |   |  |--userId (INTEGER, FOREIGEN KEY OF USER)
+|    |   |  |--creaetdAt (TIMESTAMP)
+|    |   |  |--updatedAt (TIMESTAMP)
+|    |   
+|    |   |--ProjectModel.js
+|    |   |  |--_id (INTEGER)
+|    |   |  |--projectName (STRING, REQUIRED)
+|    |   |  |--projectDescription (LONG TEXT)
+|    |   |  |--projectImages ([])
+|    |   |  |--projectFile (STRING, REQUIRED)
+|    |   |  |--projectStatus (BOOLEAN, DEFAULT 0)
+|    |   |  |--projectType (['Paid', 'Free'])
+|    |   |  |--projectPrice (INTEGER, DEFAULT 00)
+|    |   |  |--CategoryId (INTEGER, FOREIGEN KEY OF CATEGORY)
+|    |   |  |--userDetails ([USER_ID, PROJECT_LIVE_URL])
+|    |   |  |--creaetdAt (TIMESTAMP)
+|    |   |  |--updatedAt (TIMESTAMP)
+|    |   
+|    |---MIDDLEWARES
+|    |---CONFIG
+|    |---ROUTES
+|    |---UTILS
