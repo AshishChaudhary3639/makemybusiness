@@ -1,6 +1,7 @@
-PROJECT NAME : MAKEMYBUSINESS
-=============================
-FRONTEND (REACT, REDUX TOOL KIT, BOOTSTRAP)
+# PROJECT NAME : MAKEMYBUSINESS
+
+## FRONTEND (REACT, REDUX TOOL KIT, BOOTSTRAP)
+
 SRC
 |---LAYOUTS
 |   |--FrontLayout.js
@@ -45,7 +46,7 @@ BACKEND
 |    |   |  |--creaetdAt (TIMESTAMP)
 |    |   |  |--updatedAt (TIMESTAMP)
 |    |   |
-|    |   |--UserModel.js   [USER MODE TO STORE DATA OF THE USER FOR AUTHENTICATE]
+|    |   |--[UserModel.js](https://eraser.io) 
 |    |   |  |--_id (INTEGER)
 |    |   |  |--firstName (STRING)
 |    |   |  |--lastName (STRING)
@@ -66,7 +67,7 @@ BACKEND
 |    |   |  
 |    |   |--ProjectCategoryModel.js
 |    |   |  |--_id (INTEGER)
-|    |   |  |--categoryName (STRING, REQUIRED)
+|    |   |  |--categoryName ([], REQUIRED)
 |    |   |  |--categoryDescription (LONG TEXT)
 |    |   |  |--categoryImage (STRING)
 |    |   |  |--categoryStatus (BOOLEAN, DEFAULT 0)
